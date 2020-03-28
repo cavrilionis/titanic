@@ -17,7 +17,18 @@ This Jupyter notebook illustrates the following:
 - Model fit assessment
 - Visualization of the trade-off between precision and recall
 
-# My Kaggle competition submission
+This Jupyter notebook was developed with the following packages:
+
+* python 3.7.7
+* ipython 7.13.0
+* numpy 1.18.1
+* pandas 1.0.3
+* matplotlib 3.1.3
+* seaborn 0.10.0
+* scikit-learn 0.22.1
+* xgboost 0.90
+
+## My Kaggle competition submission
 
 You can find this Jupyter notebook on Kaggle:
 
@@ -27,30 +38,30 @@ Titanic competition on Kaggle:
 
 https://www.kaggle.com/c/titanic
 
-# Notes
+## Notes
 
 Please note that results of XGBoost model used in this Jupyter notebook are not identical with the results on Kaggle, as explained here:
 
 https://github.com/dmlc/xgboost/issues/310
 
-# Choosing a classifier
+## Choosing a classifier
 
 1. Get the top 2 classifiers from `GridSearchCV` with the highest mean `roc_auc` score using `cv=5`
 2. Select the classifier from step 1 above which has the lowest standard deviation of `roc_auc` score
 
-# Choosing a decision threshold
+## Choosing a decision threshold
 
 1. Compute F1 score on the training partition for each threshold between 0 and 1 by 0.001
 2. Select the threshold which minimises F1 score on the training partition
 
-# Results of XGBoost
+## Results of XGBoost
 
 | Environment | learning_rate | gamma | colsample_bytree | max_depth | minchild_weight | Threshold | Training partition accuracy | Validation partition accuracy | Scoring data accuracy |
 |:------------|--------------:|------:|-----------------:|----------:|----------------:|----------:|----------------------------:|------------------------------:|----------------------:|
 | My Mac      | 0.20          | 0.3   | 0.7              | 5         | 1               | 0.401     | 0.8652                      | 0.8156                        | N/A                   |
 | Kaggle      | 0.25          | 0     | 0.5              | 6         | 5               | 0.419     | 0.8272                      | 0.8324                        | 0.7560                |
 
-# Areas for further work
+## Areas for further work
 
 - Impute missing values in `Age` using the distribution of known values instead of the mean
 - Use `Deck` with missing value imputation
@@ -58,12 +69,12 @@ https://github.com/dmlc/xgboost/issues/310
 - Try more classifiers in `GridSearchCV`
 - Try `RandomizedSearchCV` instead of `GridSearchCV`
 
-# Authors
+## Authors
 
 * **Christos Avrilionis** - *Initial work* - [cavrilionis](https://github.com/cavrilionis)
 
 See also the list of [contributors](https://github.com/cavrilionis/titanic/graphs/contributors) who participated in this project.
 
-# License
+## License
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](https://github.com/cavrilionis/titanic/blob/master/LICENSE) file for details
