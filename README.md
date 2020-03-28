@@ -2,6 +2,15 @@
 
 An example of classification in machine learning where we predict the likelihood of survival of a passenger aboard the Titanic.
 
+This Jupyter notebook illustrates the following:
+
+- CSV file import using pandas
+- Count of missing values and distinct values for each column
+- Exploratory data analysis
+- Creation of new columns (aka feature enfineering)
+- Imputation of missing values
+
+
 # My Kaggle competition submission
 
 You can find this Jupyter notebook on Kaggle:
@@ -18,4 +27,27 @@ Please note that results of XGBoost model used in this Jupyter notebook are not 
 
 https://github.com/dmlc/xgboost/issues/310
 
+# Choosing a classifier
 
+1. Get the top 2 classifiers from `GridSearchCV` with the highest mean `roc_auc` score using `cv=5`
+2. Select the classifier from step 1 above which has the lowest standard deviation of `roc_auc` score
+
+# Choosing a decision threshold
+
+1. Compute F1 score on the training partition for each threshold between 0 and 1 by 0.001
+2. Select the threshold which minimises F1 score on the training partition
+
+# Results of XGBoost
+
+| Environment | learning_rate | gamma | colsample_bytree | max_depth | minchild_weight | Threshold | Training partition accuracy | Validation partition accuracy | Scoring data accuracy |
+|:------------|--------------:|------:|-----------------:|----------:|----------------:|----------:|----------------------------:|------------------------------:|----------------------:|
+| My Mac      | 0.20          | 0.3   | 0.7              | 5         | 1               | 0.401     | 0.8652                      | 0.8156                        | N/A                   |
+| Kaggle      | 0.25          | 0     | 0.5              | 6         | 5               | 0.419     | 0.8272                      | 0.8324                        | 0.7560                |
+
+# Areas for further work
+
+- Impute missing values in `Age` using the distribution of known values instead of the mean
+- Use `Deck` with missing value imputation
+- Try k-fold validation insted of train/test split
+- Try more classifiers in `GridSearchCV`
+- Try `RandomizedSearchCV` instead of `GridSearchCV`
