@@ -4,12 +4,18 @@ An example of classification in machine learning where we predict the likelihood
 
 This Jupyter notebook illustrates the following:
 
-- CSV file import using pandas
+- CSV file import
 - Count of missing values and distinct values for each column
 - Exploratory data analysis
-- Creation of new columns (aka feature enfineering)
+- Creation of new columns (aka feature engineering)
 - Imputation of missing values
-
+- One hot encoding of categorical columns
+- Data partitioning using stratified sampling
+- Hyperparameter tuning for several classifiers
+- Model fitting
+- Decision threshold tuning
+- Model fit assessment
+- Visualization of the trade-off between precision and recall
 
 # My Kaggle competition submission
 
