@@ -4,7 +4,7 @@ An example of classification in machine learning where we predict the likelihood
 
 # My Kaggle competition submission
 
-You can find this Jupyter notebook on Kaglle:
+You can find this Jupyter notebook on Kaggle:
 
 https://www.kaggle.com/cavrilionis/titanic-data-analysis-gridsearchcv-and-xgboost
 
