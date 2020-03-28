@@ -57,3 +57,13 @@ https://github.com/dmlc/xgboost/issues/310
 - Try k-fold validation insted of train/test split
 - Try more classifiers in `GridSearchCV`
 - Try `RandomizedSearchCV` instead of `GridSearchCV`
+
+# Authors
+
+* **Christos Avrilionis** - *Initial work* - [cavrilionis](https://github.com/cavrilionis)
+
+See also the list of [contributors](https://github.com/cavrilionis/titanic/graphs/contributors) who participated in this project.
+
+# License
+
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details
